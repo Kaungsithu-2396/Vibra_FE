@@ -1,4 +1,4 @@
-import { roboto, roboto_mono } from "./ui/fonts";
+import { roboto, roboto_mono, nunito, notosan } from "./ui/fonts";
 import "./globals.css";
 import Nav from "./ui/Home/Nav";
 export default function RootLayout({
@@ -13,6 +13,9 @@ export default function RootLayout({
             >
                 <Nav />
                 {children}
+                <footer className=" bg-zinc-400/20 py-2 text-center">
+                    All rights reserved to Kaung Si Thu
+                </footer>
             </body>
         </html>
     );

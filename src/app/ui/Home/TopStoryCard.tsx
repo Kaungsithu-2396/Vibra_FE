@@ -15,14 +15,14 @@ export default function TopStoryCard({
     img,
 }: topStoryCard) {
     return (
-        <div className="flex gap-8 my-2">
+        <div className="flex gap-8 my-5">
             <p className=" text-2xl   w-8 h-8  flex justify-center items-center font-bold   text-center ">
                 {no}.
             </p>
             <span className="flex flex-col items-start gap-y-2 w-full">
                 <h1 className="text-2xl">{title}</h1>
                 <h2 className="  text-blue-400">
-                    {author} . <span>{date}</span>
+                    {author}.  <span>{date}</span>
                 </h2>
             </span>
             <Image

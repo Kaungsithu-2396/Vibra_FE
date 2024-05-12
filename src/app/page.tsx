@@ -29,19 +29,29 @@ const data = [
 export default function Home() {
     return (
         <main className="">
-            <section className="flex justify-center items-center h-[40vh]">
+            <section className="flex justify-center items-center h-[60vh]">
                 <div className="flex justify-center items-center flex-col gap-8">
                     <h1 className=" text-5xl">
                         Read, <span className="  text-blue-400 ">Inspire</span>,
                         Create
                     </h1>
-                    <h2 className="w-[38%] m-auto text-center text-2xl text-neutral-400">
+                    <h2 className="w-[90%] m-auto text-center text-2xl text-neutral-400">
                         A platform that allows your brain to touch with quality
                         content from trustworthy source
                     </h2>
-                    <button className="  bg-blue-400 px-8 text-black rounded-md font-medium py-3 hover:scale-105 hover:font-bold duration-500 delay-400">
-                        Explore
-                    </button>
+                    <span className="flex gap-5">
+                        <input
+                            type="text"
+                            name=""
+                            size={50}
+                            placeholder="Search"
+                            className="bg-zinc-400/20 px-5 py-3 rounded-lg"
+                            id=""
+                        />
+                        <button className="   bg-blue-400 px-8 text-black rounded-md font-bold py-3 hover:scale-105 hover:font-bold duration-500 delay-400">
+                            search
+                        </button>
+                    </span>
                 </div>
             </section>
             <section className=" w-3/4 m-auto flex justify-center items-start">
@@ -70,7 +80,82 @@ export default function Home() {
                     })}
                 </div>
             </section>
-            <section className="h-screen"></section>
+            <section className="w-3/4 m-auto py-6">
+                <h1 className="text-4xl">Categories</h1>
+                <div className="flex gap-5 items-center pt-6">
+                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 delay-300 cursor-pointer">
+                        Technology
+                    </p>
+                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 delay-300 cursor-pointer">
+                        Technology
+                    </p>{" "}
+                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 delay-300 cursor-pointer">
+                        Technology
+                    </p>{" "}
+                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 delay-300 cursor-pointer">
+                        Technology
+                    </p>
+                </div>
+            </section>
+
+            <section className=" py-8 w-3/4 m-auto">
+                <h1 className="text-4xl my-5">Recent Posts</h1>
+                <div className=" grid grid-cols-2 gap-6">
+                    <BlogCard
+                        Category={"Travel"}
+                        image="/test-2.avif"
+                        title="Travelling to the coffee shop with the favourite person"
+                        paragraph={
+                            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
+                        }
+                    />
+                    <BlogCard
+                        Category={"Travel"}
+                        image="/test-2.avif"
+                        title="Travelling to the coffee shop with the favourite person"
+                        paragraph={
+                            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
+                        }
+                    />
+                    <BlogCard
+                        Category={"Travel"}
+                        image="/test-2.avif"
+                        title="Travelling to the coffee shop with the favourite person"
+                        paragraph={
+                            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
+                        }
+                    />
+                    <BlogCard
+                        Category={"Travel"}
+                        image="/test-2.avif"
+                        title="Travelling to the coffee shop with the favourite person"
+                        paragraph={
+                            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
+                        }
+                    />
+                    <BlogCard
+                        Category={"Travel"}
+                        image="/test-2.avif"
+                        title="Travelling to the coffee shop with the favourite person"
+                        paragraph={
+                            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
+                        }
+                    />
+                    <BlogCard
+                        Category={"Travel"}
+                        image="/test-2.avif"
+                        title="Travelling to the coffee shop with the favourite person"
+                        paragraph={
+                            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
+                        }
+                    />
+                </div>
+                <div className="text-center my-3">
+                    <button className="bg-blue-400 px-6 py-3 rounded-md  font-extrabold my-4">
+                        View All
+                    </button>
+                </div>
+            </section>
         </main>
     );
 }
