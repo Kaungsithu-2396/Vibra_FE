@@ -1,12 +1,11 @@
 import Link from "next/link";
 import React from "react";
+import NavForBlog from "../ui/Blog/NavForBlog";
 
 export default function Layout({
     children,
-    pageAsType,
 }: Readonly<{
     children: React.ReactNode;
-    pageAsType: React.ReactNode;
 }>) {
     return (
         <div className="">
@@ -15,12 +14,11 @@ export default function Layout({
                 name=""
                 className=" outline-none bg-zinc-500/20 p-3 m-6 rounded-lg"
                 size={40}
-                placeholder="Serach"
+                placeholder="Search"
                 id=""
             />
-
+            <NavForBlog />
             {children}
-            {pageAsType}
         </div>
     );
 }

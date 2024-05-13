@@ -1,20 +1,31 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 interface blogCard {
     image: string;
     title: String;
     Category: String;
     paragraph: String;
+    horizontal: Boolean;
+    id: String;
 }
 export default function BlogCard({
     image,
     title,
     Category,
     paragraph,
+    horizontal,
+    id,
 }: blogCard) {
     return (
         <>
-            <div className="">
+            <div
+                className={`${
+                    horizontal
+                        ? "flex justify-center  items-start gap-6 my-5"
+                        : ""
+                }`}
+            >
                 <Image
                     src={image}
                     alt="testing image"
@@ -22,12 +33,31 @@ export default function BlogCard({
                     height={100}
                     className="rounded-md text-center  "
                 />
-                <p className="py-2 text-blue-400 font-bold">{Category}</p>
-                <h1 className="w-[80%] font-bold  text-2xl">{title}</h1>
-                <p className="w-[90%] text-justify pt-4 text-neutral-400 ">
-                    {" "}
-                    {paragraph}
-                </p>
+                <span className="">
+                    <p className="py-2 text-blue-400 font-bold">{Category}</p>
+                    <span>
+                        <h1 className="w-[80%] font-bold  text-2xl">{title}</h1>
+                        <span className="  pt-2 gap-5 flex text-neutral-300 font-bold">
+                            -<p>Jonas Martin</p>
+                            <p>2 Feb 2024</p>
+                        </span>
+                        <p className="w-[90%] text-justify pt-4 text-neutral-400 ">
+                            {" "}
+                            {paragraph}
+                        </p>
+                    </span>
+
+                    {horizontal && (
+                        <div className="mt-5">
+                            <p className="text-blue-400 underline underline-offset-4">
+                                <Link href={`/blog/detail/${id}`}>
+                                    {" "}
+                                    View More
+                                </Link>
+                            </p>
+                        </div>
+                    )}
+                </span>
             </div>
         </>
     );

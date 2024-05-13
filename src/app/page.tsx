@@ -59,6 +59,8 @@ export default function Home() {
                     <BlogCard
                         Category={"Travel"}
                         image="/test-2.avif"
+                        horizontal={false}
+                        id={"2"}
                         title="Travelling to the coffee shop with the favourite person"
                         paragraph={
                             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
@@ -83,16 +85,16 @@ export default function Home() {
             <section className="w-3/4 m-auto py-6">
                 <h1 className="text-4xl">Categories</h1>
                 <div className="flex gap-5 items-center pt-6">
-                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 delay-300 cursor-pointer">
+                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 bg-[#1c1c1c] delay-300 cursor-pointer">
                         Technology
                     </p>
-                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 delay-300 cursor-pointer">
+                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 bg-[#1c1c1c] delay-300 cursor-pointer">
                         Technology
                     </p>{" "}
-                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 delay-300 cursor-pointer">
+                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 bg-[#1c1c1c] delay-300 cursor-pointer">
                         Technology
                     </p>{" "}
-                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 delay-300 cursor-pointer">
+                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 bg-[#1c1c1c] delay-300 cursor-pointer">
                         Technology
                     </p>
                 </div>
@@ -103,7 +105,29 @@ export default function Home() {
                 <div className=" grid grid-cols-2 gap-6">
                     <BlogCard
                         Category={"Travel"}
+                        horizontal={false}
                         image="/test-2.avif"
+                        id={"1"}
+                        title="Travelling to the coffee shop with the favourite person"
+                        paragraph={
+                            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
+                        }
+                    />
+                    <BlogCard
+                        horizontal={false}
+                        Category={"Travel"}
+                        image="/test-2.avif"
+                        id={"2"}
+                        title="Travelling to the coffee shop with the favourite person"
+                        paragraph={
+                            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
+                        }
+                    />
+                    <BlogCard
+                        horizontal={false}
+                        Category={"Travel"}
+                        image="/test-2.avif"
+                        id={"3"}
                         title="Travelling to the coffee shop with the favourite person"
                         paragraph={
                             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
@@ -112,38 +136,28 @@ export default function Home() {
                     <BlogCard
                         Category={"Travel"}
                         image="/test-2.avif"
+                        id={"4"}
+                        title="Travelling to the coffee shop with the favourite person"
+                        paragraph={
+                            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
+                        }
+                        horizontal={false}
+                    />
+                    <BlogCard
+                        horizontal={false}
+                        Category={"Travel"}
+                        image="/test-2.avif"
+                        id={"5"}
                         title="Travelling to the coffee shop with the favourite person"
                         paragraph={
                             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
                         }
                     />
                     <BlogCard
+                        horizontal={false}
                         Category={"Travel"}
                         image="/test-2.avif"
-                        title="Travelling to the coffee shop with the favourite person"
-                        paragraph={
-                            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
-                        }
-                    />
-                    <BlogCard
-                        Category={"Travel"}
-                        image="/test-2.avif"
-                        title="Travelling to the coffee shop with the favourite person"
-                        paragraph={
-                            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
-                        }
-                    />
-                    <BlogCard
-                        Category={"Travel"}
-                        image="/test-2.avif"
-                        title="Travelling to the coffee shop with the favourite person"
-                        paragraph={
-                            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
-                        }
-                    />
-                    <BlogCard
-                        Category={"Travel"}
-                        image="/test-2.avif"
+                        id={"6"}
                         title="Travelling to the coffee shop with the favourite person"
                         paragraph={
                             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam numquam, impedit quod dicta quidem cumque deleniti aperiam molestiae ut nobis?"
