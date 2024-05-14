@@ -7,7 +7,7 @@ export default function NavForBlog() {
     const pathName = usePathname();
     return (
         <>
-            <span className="flex gap-6 text-2xl font-bold">
+            <span className="flex gap-6 text-2xl font-bold m-7">
                 <h1>
                     {" "}
                     <Link
