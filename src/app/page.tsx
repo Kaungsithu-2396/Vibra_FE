@@ -1,8 +1,20 @@
-import Link from "next/link";
-import NavLink from "./ui/Home/NavLink";
-import Image from "next/image";
 import BlogCard from "./ui/Home/BlogCard";
 import TopStoryCard from "./ui/Home/TopStoryCard";
+import Link from "next/link";
+const categoryList = [
+    {
+        id: 1,
+        name: "Technology",
+    },
+    {
+        id: 2,
+        name: "Travel",
+    },
+    {
+        id: 3,
+        name: "Sport",
+    },
+];
 const data = [
     {
         id: 1,
@@ -37,7 +49,7 @@ export default function Home() {
                     </h1>
                     <h2 className="w-[90%] m-auto text-center text-2xl text-neutral-400">
                         A platform that allows your brain to touch with quality
-                        content from trustworthy source
+                        content from trustworthy sources
                     </h2>
                     <span className="flex gap-5">
                         <input
@@ -85,18 +97,22 @@ export default function Home() {
             <section className="w-3/4 m-auto py-6">
                 <h1 className="text-4xl">Categories</h1>
                 <div className="flex gap-5 items-center pt-6">
-                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 bg-[#1c1c1c] delay-300 cursor-pointer">
-                        Technology
-                    </p>
-                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 bg-[#1c1c1c] delay-300 cursor-pointer">
-                        Technology
-                    </p>{" "}
-                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 bg-[#1c1c1c] delay-300 cursor-pointer">
-                        Technology
-                    </p>{" "}
-                    <p className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 bg-[#1c1c1c] delay-300 cursor-pointer">
-                        Technology
-                    </p>
+                    {categoryList.map((el) => {
+                        return (
+                            <>
+                                <Link
+                                    href={`/category/${el.name.toLowerCase()}`}
+                                >
+                                    <p
+                                        key={el.id}
+                                        className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 bg-[#1c1c1c] delay-300 cursor-pointer"
+                                    >
+                                        {el.name}
+                                    </p>
+                                </Link>
+                            </>
+                        );
+                    })}
                 </div>
             </section>
 

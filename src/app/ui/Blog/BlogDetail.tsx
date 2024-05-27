@@ -32,7 +32,7 @@ export default function BlogDetail() {
                 className=" w-full m-auto rounded-md"
             />
             <div className="py-5">
-                <p className="text-2xl tracking-wider leading-10 indent-10 text-justify ">
+                <p className="text-xl text-neutral-300 tracking-wider leading-10 indent-10 text-justify ">
                     Lastly, after a little hand-picking, we found the 8 repos
                     below. 👇 These repos will be particularly useful when you
                     want to build cool web apps. If you are interested in
