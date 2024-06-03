@@ -105,7 +105,7 @@ export default function Home() {
                                 >
                                     <p
                                         key={el.id}
-                                        className="border-2 border-white px-5 py-3 font-semibold rounded-md hover:scale-110 duration-300 bg-[#1c1c1c] delay-300 cursor-pointer"
+                                        className="border-2 border-white px-5 py-3 font-semibold rounded-md transition-all hover:text-black hover:scale-110 duration-300 bg-[#1c1c1c] delay-300 cursor-pointer hover:bg-blue-400  "
                                     >
                                         {el.name}
                                     </p>

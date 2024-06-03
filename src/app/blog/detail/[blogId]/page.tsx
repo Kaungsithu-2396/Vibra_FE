@@ -10,17 +10,20 @@ interface prop {
 }
 export default function page({ params }: prop) {
     return (
-        <section className="my-6 m-auto w-[60%] ">
-            <BlogDetail />
-            <div className="my-8">
-                <h2 className="text-3xl">Related Blog</h2>
-                <div className="my-4 flex justify-center items-center gap-5">
+        <section className="my-6  ">
+            <div className=" w-[60%] m-auto">
+                <BlogDetail />
+            </div>
+
+            <div className="my-8 w-[80%] m-auto ">
+                <h2 className="text-3xl">Related Blogs</h2>
+                <div className="my-4 grid grid-cols-3  gap-8">
                     <BlogCard
                         image="/test-2.avif"
                         title={"Minglar par"}
                         Category={"Sport"}
                         paragraph={
-                            "using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
+                            "sing 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
                         }
                         horizontal={false}
                         id={"2"}
@@ -30,7 +33,7 @@ export default function page({ params }: prop) {
                         title={"Minglar par"}
                         Category={"Sport"}
                         paragraph={
-                            "using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
+                            "sing 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
                         }
                         horizontal={false}
                         id={"2"}
@@ -40,7 +43,17 @@ export default function page({ params }: prop) {
                         title={"Minglar par"}
                         Category={"Sport"}
                         paragraph={
-                            "using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
+                            "sing 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
+                        }
+                        horizontal={false}
+                        id={"2"}
+                    />
+                    <BlogCard
+                        image="/test-2.avif"
+                        title={"Minglar par"}
+                        Category={"Sport"}
+                        paragraph={
+                            "sing 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
                         }
                         horizontal={false}
                         id={"2"}

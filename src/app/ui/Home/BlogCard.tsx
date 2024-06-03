@@ -41,7 +41,7 @@ export default function BlogCard({
                             -<p>Jonas Martin</p>
                             <p>2 Feb 2024</p>
                         </span>
-                        <p className="w-[50] text-justify pt-4 text-neutral-400 ">
+                        <p className="w-[87%] text-justify pt-4 text-neutral-400 ">
                             {" "}
                             {paragraph.slice(0, 150)}....
                         </p>
@@ -59,7 +59,7 @@ export default function BlogCard({
                     ) : (
                         <Link
                             href={`/blog/detail/${id}`}
-                            className=" underline text-blue-400"
+                            className=" underline block my-3 text-blue-400"
                         >
                             <p>View More</p>
                         </Link>

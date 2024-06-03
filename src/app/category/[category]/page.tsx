@@ -8,22 +8,24 @@ interface props {
 export default function page({ params: { category } }: props) {
     return (
         <section>
-            <div className=" flex justify-center items-center h-[30vh]">
+            <div className=" flex justify-center items-center h-[30vh] bg-[#140005] my-4">
                 <h1 className=" font-bold">
-                    <span className="text-2xl  text-neutral-400">
-                        Topic for{" "}
+                    <span className="text- inline-block text-center  text-neutral-400">
+                        Blog for{" "}
                     </span>{" "}
                     <br />
-                    <span className="text-5xl pt-3">
+                    <span className="text-5xl inline-block pt-3">
+                        "
                         {category.slice(0, 1).toUpperCase() + category.slice(1)}
+                        "
                     </span>
                 </h1>
             </div>
             <div className=" w-[90%] m-auto">
                 <h2 className="text-3xl mb-7 text-neutral-300 ">
-                    Recommended Blog
+                    Recommended Blogs
                 </h2>
-                <div className="my-3 flex justify-center items-start">
+                <div className="my-3 flex justify-center gap-5 items-start">
                     <BlogCard
                         image="/test-2.avif"
                         title="Minglar par"
