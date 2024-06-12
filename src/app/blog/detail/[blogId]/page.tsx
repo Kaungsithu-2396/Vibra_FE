@@ -8,7 +8,7 @@ interface prop {
         blogId: String;
     };
 }
-export default function page({ params }: prop) {
+export default function page({ params: { blogId } }: prop) {
     return (
         <section className="my-6  ">
             <div className=" w-[60%] m-auto">
@@ -16,8 +16,8 @@ export default function page({ params }: prop) {
             </div>
 
             <div className="my-8 w-[80%] m-auto ">
-                <h2 className="text-3xl">Related Blogs</h2>
-                <div className="my-4 grid grid-cols-3  gap-8">
+                <h2 className="text-3xl my-9">Related Blogs</h2>
+                <div className="my-4">
                     <BlogCard
                         image="/test-2.avif"
                         title={"Minglar par"}
@@ -25,7 +25,7 @@ export default function page({ params }: prop) {
                         paragraph={
                             "sing 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
                         }
-                        horizontal={false}
+                        horizontal={true}
                         id={"2"}
                     />
                     <BlogCard
@@ -35,7 +35,7 @@ export default function page({ params }: prop) {
                         paragraph={
                             "sing 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
                         }
-                        horizontal={false}
+                        horizontal={true}
                         id={"2"}
                     />
                     <BlogCard
@@ -45,17 +45,7 @@ export default function page({ params }: prop) {
                         paragraph={
                             "sing 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
                         }
-                        horizontal={false}
-                        id={"2"}
-                    />
-                    <BlogCard
-                        image="/test-2.avif"
-                        title={"Minglar par"}
-                        Category={"Sport"}
-                        paragraph={
-                            "sing 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
-                        }
-                        horizontal={false}
+                        horizontal={true}
                         id={"2"}
                     />
                 </div>

@@ -95,7 +95,7 @@ export default function Home() {
                 </div>
             </section>
             <section className="w-3/4 m-auto py-6">
-                <h1 className="text-4xl">Categories</h1>
+                <h1 className="text-4xl">Top Categories</h1>
                 <div className="flex gap-5 items-center pt-6">
                     {categoryList.map((el) => {
                         return (
