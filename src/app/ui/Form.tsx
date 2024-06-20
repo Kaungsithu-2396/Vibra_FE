@@ -1,17 +1,15 @@
 "use client";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
-import { redirect } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import React, { ChangeEvent, useState } from "react";
-import { LiaOilCanSolid } from "react-icons/lia";
 import isDuplicatedItem from "../../../util/findDuplicatedItem";
 
 interface formInput {
+    category: string;
     title: String;
     description: String;
     file: String;
-    category: String;
 }
 export default function Form() {
     const router = useRouter();
@@ -25,8 +23,15 @@ export default function Form() {
         formState: { errors },
     } = useForm<formInput>();
     const onSubmit: SubmitHandler<formInput> = (data) => {
-        console.log("data", data);
-        // router.push("/");
+        const { description, file, title } = data;
+        const transformData = {
+            description,
+            file,
+            title,
+            category: [...categoryCol],
+        };
+        console.log(transformData);
+        router.push("/");
     };
     const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
         const inputValue = e.target as HTMLInputElement;
@@ -39,14 +44,17 @@ export default function Form() {
             if (isItemDuplicated) {
                 setError("This item already exisits");
             } else {
-                categoryCol.length >= 4 && setDisableInput(true);
                 setCategoryCol([...categoryCol, inputValue.value]);
-
                 reset({
                     category: "",
                 });
             }
         }
+    };
+    const onClickHandler = (value: String) => {
+        setCategoryCol((categoryCol) => {
+            return categoryCol.filter((item) => item !== value);
+        });
     };
 
     return (
@@ -95,6 +103,7 @@ export default function Form() {
                     {...register("file", {
                         required: "please select at least one photo",
                     })}
+                    accept="image/jpeg"
                     id="file"
                     className="bg-black/50 border p-4 border-white/30 rounded-md w-full"
                 />
@@ -103,41 +112,46 @@ export default function Form() {
                     {errors?.file?.type === "required" && errors?.file?.message}
                 </p>
 
-                <label
-                    htmlFor="categoryList"
-                    className="text-2xl text-neutral-400"
-                >
+                <label htmlFor="category" className="text-2xl text-neutral-400">
                     Category
                 </label>
                 <div className="w-full ">
                     <Input
-                        {...register("category", {
-                            required: "please choose at least one category",
-                        })}
+                        {...register("category")}
+                        id="category"
                         name="category"
                         className={`bg-black py-6`}
-                        disabled={disableInput}
+                        disabled={categoryCol.length >= 5}
                         onKeyDown={onKeyDownHandler}
                         onChange={() => setError("")}
+                        autoComplete="off"
                     />
-                    {errors?.category?.type === "required" && (
-                        <p className=" text-red-400 mt-3">
-                            {errors?.category?.message}
-                        </p>
-                    )}
+
                     <>
                         <ul className="flex flex-row gap-5 p-5">
                             {categoryCol.map((el, idx) => {
                                 return (
                                     <li
                                         key={idx}
-                                        className=" bg-slate-300 px-5 py-2 text-black font-bold rounded-md"
+                                        className=" hover:scale-105 duration-150 delay-150 relative cursor-pointer   bg-slate-300 px-5 py-2 text-black/80 font-bold rounded-md"
                                     >
                                         {el}
+                                        <span
+                                            className="absolute text-base text-red-700 top-0 right-2"
+                                            onClick={() => onClickHandler(el)}
+                                        >
+                                            x
+                                        </span>
                                     </li>
                                 );
                             })}
                         </ul>
+                        {categoryCol.length === 0 && (
+                            <p className=" text-blue-300 p-0">
+                                selecting at least one type of category can
+                                enhance the user's expericence
+                            </p>
+                        )}
                         <p className="text-red-400">{error}</p>
                         {
                             <h1 className=" text-blue-500">
@@ -177,8 +191,8 @@ export default function Form() {
                 )}
 
                 <div className="text-center ">
-                    <button className="text-white border hover:bg-blue-400 hover:text-black hover:scale-105 duration-300 delay-200 text-center border-white rounded-md px-3 py-5 w-[14%] font-bold">
-                        Submit
+                    <button className="text-white border-2  hover:bg-blue-400 hover:text-black hover:scale-105 duration-300 delay-200 text-center  rounded-md px-3 py-5 w-[30%] font-bold">
+                        Upload
                     </button>
                 </div>
             </form>

@@ -9,6 +9,14 @@ export default function BlogDetail() {
                 <h1 className="text-4xl font-bold mb-2    text-start ">
                     Travelling to the coffee shop with the favourite person
                 </h1>
+                <span className="py-2">
+                    <Link
+                        href={"/category/travel"}
+                        className="underline underline-offset-2 text-blue-400"
+                    >
+                        #Travel
+                    </Link>
+                </span>
                 <span className="text-start  mt-3 mb-0 ">
                     <span className="flex gap-6">
                         <h2>Jonas Martin</h2>
@@ -20,6 +28,7 @@ export default function BlogDetail() {
                             </p>
                         </Link>
                     </span>
+
                     <h2 className="py-3">27 Feb 2024</h2>
                 </span>
             </div>
@@ -32,7 +41,7 @@ export default function BlogDetail() {
                 className=" w-full m-auto rounded-md"
             />
             <div className="py-5">
-                <p className="text-xl text-neutral-300 tracking-wider leading-10 indent-10 text-justify ">
+                <p className="text-xl text-neutral-300 leading-10 tracking-widest indent-10 text-justify ">
                     Lastly, after a little hand-picking, we found the 8 repos
                     below. 👇 These repos will be particularly useful when you
                     want to build cool web apps. If you are interested in

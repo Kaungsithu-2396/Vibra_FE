@@ -24,9 +24,11 @@ export default function Nav() {
                     <span className="text-2xl">
                         <MdSunny />
                     </span>
-                    <button className=" border-2 border-black bg-blue-500 px-5 py-2 rounded-lg">
-                        Log in
-                    </button>
+                    <Link href={"/login"}>
+                        <button className=" border-2 border-black bg-blue-500 px-5 py-2 rounded-lg">
+                            Login
+                        </button>
+                    </Link>
                 </span>
             </nav>
         </>
