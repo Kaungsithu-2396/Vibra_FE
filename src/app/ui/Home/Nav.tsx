@@ -21,6 +21,14 @@ export default function Nav() {
                 </span>
 
                 <span className="flex justify-center items-center gap-5">
+                    <span>
+                        <Link
+                            href={"/profile"}
+                            className=" underline underline-offset-2 decoration-blue-400 "
+                        >
+                            Profile
+                        </Link>
+                    </span>
                     <span className="text-2xl">
                         <MdSunny />
                     </span>
