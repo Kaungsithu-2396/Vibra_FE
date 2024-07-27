@@ -182,7 +182,7 @@ export default function Home() {
                 </div>
                 <div className="text-center my-3">
                     <button className="bg-blue-400 px-6 py-3 rounded-md  font-extrabold my-4">
-                        View All
+                        <Link href={"/blog"}>View All</Link>
                     </button>
                 </div>
             </section>

@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaPlus } from "react-icons/fa";
+import FollowBtn from "../Home/FollowBtn";
+import SaveBtn from "../Home/SaveBtn";
+
 export default function BlogDetail() {
     return (
         <>
@@ -17,20 +19,19 @@ export default function BlogDetail() {
                         #Travel
                     </Link>
                 </span>
-                <span className="text-start  mt-3 mb-0 ">
-                    <span className="flex gap-6">
-                        <h2>Jonas Martin</h2>
-                        <Link href={"/"}>
-                            {" "}
-                            <p className="text-blue-300 font-bold flex justify-center items-center gap-2 cursor-pointer">
-                                {" "}
-                                <FaPlus /> Follow
-                            </p>
-                        </Link>
-                    </span>
+                <div className="  mt-3 mb-0 w-full ">
+                    <div className="flex justify-between items-center  gap-10">
+                        <div className="flex gap-6">
+                            <h2>Jonas Martin</h2>
+                            <FollowBtn isFollow={false} />
+                        </div>
+                        <div className="">
+                            <SaveBtn />
+                        </div>
+                    </div>
 
                     <h2 className="py-3">27 Feb 2024</h2>
-                </span>
+                </div>
             </div>
 
             <Image

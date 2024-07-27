@@ -13,17 +13,17 @@ interface formInput {
 }
 export default function Form() {
     const router = useRouter();
-    // const [disableInput, setDisableInput] = useState<boolean>(false);
     const [categoryCol, setCategoryCol] = useState<String[]>([]);
-    const [error, setError] = useState("");
+    const [errorDuplicated, setErrorDuplicated] = useState("");
     const [preview, setPreview] = useState<string | null>();
     const {
         register,
         handleSubmit,
         reset,
-        getValues,
+        setError,
         formState: { errors },
     } = useForm<formInput>();
+    console.log(errors);
     const onSubmit: SubmitHandler<formInput> = (data) => {
         const { description, file, title } = data;
         const transformData = {
@@ -44,7 +44,7 @@ export default function Form() {
         if (e.key === "Enter") {
             e.preventDefault();
             if (isItemDuplicated) {
-                setError("This item already exisits");
+                setErrorDuplicated("This item already exisits");
             } else {
                 setCategoryCol([...categoryCol, inputValue.value]);
                 reset({
@@ -122,7 +122,7 @@ export default function Form() {
                                     className={`bg-black py-6 my-3`}
                                     disabled={categoryCol.length >= 5}
                                     onKeyDown={onKeyDownHandler}
-                                    onChange={() => setError("")}
+                                    onChange={() => setErrorDuplicated("")}
                                     autoComplete="off"
                                 />
 
@@ -133,11 +133,11 @@ export default function Form() {
                                                 return (
                                                     <li
                                                         key={idx}
-                                                        className=" hover:scale-105 duration-150 delay-150 relative cursor-pointer   bg-slate-300 px-5 py-2 text-black/80 font-bold rounded-md"
+                                                        className=" hover:scale-105 duration-150 delay-150 relative cursor-pointer bg-slate-800 text-white px-5 py-2 text-black/80 font-bold rounded-md"
                                                     >
                                                         {el}
                                                         <span
-                                                            className="absolute text-base text-red-700 top-0 right-2"
+                                                            className="absolute text-base text-red-700 top-0 right-1"
                                                             onClick={() =>
                                                                 onClickHandler(
                                                                     el
@@ -152,14 +152,15 @@ export default function Form() {
                                         </ul>
                                     )}
 
-                                    {/* {categoryCol.length === 0 && (
-                                        <p className=" text-blue-300 p-0">
-                                            selecting at least one type of
-                                            category can enhance the user's
-                                            expericence
+                                    {categoryCol.length === 0 && (
+                                        <p className=" text-red-400 p-0">
+                                            Select one category for better
+                                            experience
                                         </p>
-                                    )} */}
-                                    <p className="text-red-400">{error}</p>
+                                    )}
+                                    <p className="text-red-400">
+                                        {errorDuplicated}
+                                    </p>
                                     {
                                         <h1 className=" text-blue-500">
                                             {categoryCol.length >= 5 &&
@@ -211,23 +212,43 @@ export default function Form() {
                             })}
                             onChange={(e) => {
                                 if (!e.target.files) return;
-                                setPreview(
-                                    URL.createObjectURL(e.target.files[0])
-                                );
+                                const sizeInMB = 3;
+                                const maxFileUploadSize =
+                                    sizeInMB * 1024 * 1024;
+                                if (
+                                    e.target.files[0].size > maxFileUploadSize
+                                ) {
+                                    reset({
+                                        file: "",
+                                    });
+                                    console.log("file big");
+                                    //limit file size
+                                    setError("file", {
+                                        type: "large file",
+                                        message: `Photo must be under ${sizeInMB} MB`,
+                                    });
+                                } else {
+                                    setPreview(
+                                        URL.createObjectURL(e.target.files[0])
+                                    );
+                                }
                             }}
-                            accept="image/jpeg"
+                            accept="image/jpeg, image/png"
                             id="file"
                             className="bg-black/50 border p-4 border-white/30 my-3 rounded-md w-full"
                         />
+
                         {preview && (
                             <img
                                 src={preview}
-                                alt=""
-                                className=" max-w-[300px]"
+                                alt="preview image for selected file"
+                                className=" max-w-[300px] rounded-md"
                             />
                         )}
                         <p className="text-red-400 pt-2">
                             {errors?.file?.type === "required" &&
+                                errors?.file?.message}
+                            {errors?.file?.type === "large file" &&
                                 errors?.file?.message}
                         </p>
                     </div>
