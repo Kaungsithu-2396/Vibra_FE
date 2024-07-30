@@ -69,7 +69,7 @@ export default function Home() {
             <section className=" w-3/4 m-auto flex justify-center items-start">
                 <div className="w-[50%]">
                     <BlogCard
-                        Category={"Travel"}
+                        Category={["Travel"]}
                         image="/test-2.avif"
                         horizontal={false}
                         id={"2"}
@@ -120,7 +120,7 @@ export default function Home() {
                 <h1 className="text-4xl my-5">Recent Posts</h1>
                 <div className=" grid grid-cols-2 gap-6">
                     <BlogCard
-                        Category={"Travel"}
+                        Category={["Travel"]}
                         horizontal={false}
                         image="/test-2.avif"
                         id={"1"}
@@ -131,7 +131,7 @@ export default function Home() {
                     />
                     <BlogCard
                         horizontal={false}
-                        Category={"Travel"}
+                        Category={["Travel"]}
                         image="/test-2.avif"
                         id={"2"}
                         title="Travelling to the coffee shop with the favourite person"
@@ -141,7 +141,7 @@ export default function Home() {
                     />
                     <BlogCard
                         horizontal={false}
-                        Category={"Travel"}
+                        Category={["Travel"]}
                         image="/test-2.avif"
                         id={"3"}
                         title="Travelling to the coffee shop with the favourite person"
@@ -150,7 +150,7 @@ export default function Home() {
                         }
                     />
                     <BlogCard
-                        Category={"Travel"}
+                        Category={["Travel"]}
                         image="/test-2.avif"
                         id={"4"}
                         title="Travelling to the coffee shop with the favourite person"
@@ -161,7 +161,7 @@ export default function Home() {
                     />
                     <BlogCard
                         horizontal={false}
-                        Category={"Travel"}
+                        Category={["Travel"]}
                         image="/test-2.avif"
                         id={"5"}
                         title="Travelling to the coffee shop with the favourite person"
@@ -171,7 +171,7 @@ export default function Home() {
                     />
                     <BlogCard
                         horizontal={false}
-                        Category={"Travel"}
+                        Category={["Travel"]}
                         image="/test-2.avif"
                         id={"6"}
                         title="Travelling to the coffee shop with the favourite person"

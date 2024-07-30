@@ -4,7 +4,7 @@ import Link from "next/link";
 interface blogCard {
     image: string;
     title: String;
-    Category: String;
+    Category: Array<string>;
     paragraph: String;
     horizontal: Boolean;
     id: String;
@@ -17,13 +17,14 @@ export default function BlogCard({
     horizontal,
     id,
 }: blogCard) {
+    console.log(typeof Category);
     return (
         <>
             <div
                 className={`${
                     horizontal
                         ? "flex justify-center  items-start gap-6 my-5"
-                        : ""
+                        : "my-5"
                 }`}
             >
                 <Image
@@ -34,11 +35,31 @@ export default function BlogCard({
                     className="rounded-md text-center  "
                 />
                 <span className="">
-                    <p className="py-2 text-blue-400 font-bold">{Category}</p>
+                    <div className="flex gap-5">
+                        {Category.map((el, idx) => {
+                            return (
+                                <>
+                                    <p
+                                        className="py-1 text-blue-500 underline underline-offset-2 cursor-pointer font-bold "
+                                        key={idx}
+                                    >
+                                        <Link
+                                            href={`/category/${el.toLowerCase()}`}
+                                        >
+                                            #{el[0].toUpperCase()}
+                                            {el.slice(1)}
+                                        </Link>
+                                    </p>
+                                </>
+                            );
+                        })}
+                    </div>
+
+                    {/* <p className="py-2 text-blue-400 font-bold">{Category}</p> */}
                     <span>
                         <h1 className="w-[80%] font-bold  text-2xl">{title}</h1>
-                        <span className="  pt-2 gap-5 flex text-neutral-300 font-bold">
-                            -<p>Jonas Martin</p>
+                        <span className="  pt-2  flex flex-col  text-neutral-300 font-bold">
+                            <p>- Jonas Martin</p>
                             <p>2 Feb 2024</p>
                         </span>
                         <p className="w-[87%] text-justify pt-4 text-neutral-400 ">

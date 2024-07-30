@@ -1,49 +1,57 @@
-"use client";
-import Image from "next/image";
 import React from "react";
-import ProfileNav from "../ui/Profile/ProfileNav";
-import { usePathname } from "next/navigation";
+import BlogCard from "../ui/Home/BlogCard";
+
 export default function page() {
     return (
-        <section className="h-screen mt-5">
-            <div className=" w-2/3 m-auto  top-40 left-[10%] absolute ">
-                <div className="my-5 grid grid-cols-3 justify-center items-start gap-6">
-                    <Image
-                        src={"/test-2.avif"}
-                        alt="Image for something"
-                        width={900}
-                        height={600}
-                        className=" rounded-md"
-                    />
-                    <div className=" col-span-2 grid grid-cols-1 gap-4">
-                        <div className="my-5">
-                            <h1 className="text-3xl font-bold">Kaung Si Thu</h1>
-                        </div>
-                        <div className="my-5 grid grid-cols-3 justify-around items-center gap-3">
-                            <h1 className="flex flex-col ">
-                                <span className="text-2xl font-bold">2322</span>
-                                <span className="font-bold text-xl  text-white/70 ">
-                                    Followers
-                                </span>
-                            </h1>
-                            <h1 className="flex flex-col ">
-                                <span className="text-2xl font-bold">22</span>
-                                <span className="font-bold text-xl text-white/70  ">
-                                    Following
-                                </span>
-                            </h1>
-                            <h1 className="flex flex-col ">
-                                <span className="text-2xl font-bold">2</span>
-                                <span className="font-bold text-xl text-white/70  ">
-                                    Posts
-                                </span>
-                            </h1>
-                        </div>
-                    </div>
-                </div>
-                <ProfileNav />
-            </div>
-            <div className="w-2/3 m-auto "></div>
+        <section className="my-5 flex justify-start flex-col items-start">
+            <BlogCard
+                title={"Welcome back"}
+                horizontal={true}
+                id={"1"}
+                image={"/test-2.avif"}
+                Category={["travel", "sport", "crime","nice","couple"]}
+                paragraph={"Lorem Ipsum is "}
+            />
+            <BlogCard
+                title={"Welcome back"}
+                horizontal={true}
+                id={"1"}
+                image={"/test-2.avif"}
+                Category={["travel", "sport", "crime"]}
+                paragraph={
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic"
+                }
+            />
+            <BlogCard
+                title={"Welcome back"}
+                horizontal={true}
+                id={"1"}
+                image={"/test-2.avif"}
+                Category={["travel", "sport", "crime"]}
+                paragraph={
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic"
+                }
+            />
+            <BlogCard
+                title={"Welcome back"}
+                horizontal={true}
+                id={"1"}
+                image={"/test-2.avif"}
+                Category={["travel", "sport", "crime"]}
+                paragraph={
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic"
+                }
+            />
+            <BlogCard
+                title={"Welcome back"}
+                horizontal={true}
+                id={"1"}
+                image={"/test-2.avif"}
+                Category={["travel", "sport", "crime"]}
+                paragraph={
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic"
+                }
+            />
         </section>
     );
 }

@@ -5,7 +5,7 @@ export default function page() {
     return (
         <section className="w-2/3 m-auto">
             <BlogCard
-                Category={"Travel"}
+                Category={["Travel"]}
                 image="/test-2.avif"
                 horizontal={true}
                 id={"2"}
@@ -15,7 +15,7 @@ export default function page() {
                 }
             />
             <BlogCard
-                Category={"Travel"}
+                Category={["Travel"]}
                 image="/test-2.avif"
                 horizontal={true}
                 id={"2"}
@@ -25,7 +25,7 @@ export default function page() {
                 }
             />
             <BlogCard
-                Category={"Travel"}
+                Category={["Travel"]}
                 image="/test-2.avif"
                 horizontal={true}
                 id={"2"}
@@ -35,7 +35,7 @@ export default function page() {
                 }
             />
             <BlogCard
-                Category={"Travel"}
+                Category={["Travel"]}
                 image="/test-2.avif"
                 horizontal={true}
                 id={"2"}

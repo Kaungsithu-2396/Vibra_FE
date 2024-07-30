@@ -21,7 +21,7 @@ export default function page({ params: { blogId } }: prop) {
                     <BlogCard
                         image="/test-2.avif"
                         title={"Minglar par"}
-                        Category={"Sport"}
+                        Category={["sport", "nice"]}
                         paragraph={
                             "sing 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
                         }
@@ -31,7 +31,7 @@ export default function page({ params: { blogId } }: prop) {
                     <BlogCard
                         image="/test-2.avif"
                         title={"Minglar par"}
-                        Category={"Sport"}
+                        Category={["Travel"]}
                         paragraph={
                             "sing 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
                         }
@@ -41,7 +41,7 @@ export default function page({ params: { blogId } }: prop) {
                     <BlogCard
                         image="/test-2.avif"
                         title={"Minglar par"}
-                        Category={"Sport"}
+                        Category={["sport"]}
                         paragraph={
                             "sing 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
                         }

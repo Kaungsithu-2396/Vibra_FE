@@ -24,7 +24,7 @@ function FollowBtn({ isFollow }: { isFollow: boolean }) {
             {follow ? (
                 <AlertDialog>
                     <Button>
-                        <AlertDialogTrigger className="text-blue-300 font-bold flex justify-center items-center gap-4">
+                        <AlertDialogTrigger className="text-red-500  flex justify-center items-center gap-4 hover:font-bold duration-200 delay-200">
                             <FaPlus /> Unfollow
                         </AlertDialogTrigger>
                     </Button>

@@ -18,12 +18,12 @@ export default function ProfileNav() {
                 </Link>
                 <p>|</p>
                 <Link
-                    href={"/likeposts"}
+                    href={"/profile/save"}
                     className={`${
-                        pathName === "likePosts" ? "bg-blue-400" : ""
+                        pathName === "/profile/save" ? "text-blue-500" : ""
                     }`}
                 >
-                    Liked Posts
+                    Saved Posts
                 </Link>
             </span>
         </>

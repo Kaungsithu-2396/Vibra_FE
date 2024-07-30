@@ -14,7 +14,7 @@ export default function RootLayout({
             >
                 <Nav />
                 {children}
-                <footer className=" bg-zinc-400/20 py-4 text-center">
+                <footer className=" bg-zinc-400/20 py-4  mt-[4rem] text-center">
                     All rights reserved to{" "}
                     <span className=" font-bold text-blue-300">
                         @Kaung Si Thu
