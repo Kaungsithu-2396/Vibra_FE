@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Input } from "./ui/input";
 import { IoSearch } from "react-icons/io5";
+import { useRouter } from "next/navigation";
 interface searchBtn {
     isSearchBtn: Boolean;
     size: number;
@@ -11,6 +12,7 @@ export default function Search({ isSearchBtn, size }: searchBtn) {
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setKeyWord(e.target.value);
     };
+    const router = useRouter();
     return (
         <>
             <div className="relative">
@@ -22,6 +24,11 @@ export default function Search({ isSearchBtn, size }: searchBtn) {
                     size={size}
                     className=" border-0   pl-[3.3rem]  bg-zinc-400/20"
                     onChange={onChangeHandler}
+                    onKeyDown={(e) => {
+                        if (e.key == "Enter") {
+                            router.push(`/category/${keyWord}`);
+                        }
+                    }}
                     value={keyWord}
                 />
             </div>

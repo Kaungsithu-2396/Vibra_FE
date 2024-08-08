@@ -16,7 +16,10 @@ export default function page({ params: { category } }: props) {
                     <br />
                     <span className="text-5xl inline-block pt-3">
                         "
-                        {category.slice(0, 1).toUpperCase() + category.slice(1)}
+                        {decodeURI(
+                            category.slice(0, 1).toUpperCase() +
+                                category.slice(1)
+                        )}
                         "
                     </span>
                 </h1>
