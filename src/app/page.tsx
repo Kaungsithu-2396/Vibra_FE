@@ -1,6 +1,7 @@
 import BlogCard from "./ui/Home/BlogCard";
 import TopStoryCard from "./ui/Home/TopStoryCard";
 import Link from "next/link";
+import Search from "@/components/Search";
 const categoryList = [
     {
         id: 1,
@@ -52,17 +53,7 @@ export default function Home() {
                         content from trustworthy sources
                     </h2>
                     <span className="flex gap-5">
-                        <input
-                            type="text"
-                            name=""
-                            size={50}
-                            placeholder="Search"
-                            className="bg-zinc-400/20 px-5 py-3 rounded-lg"
-                            id=""
-                        />
-                        <button className="   bg-blue-400 px-8 text-black rounded-md font-bold py-3 hover:scale-105 hover:font-bold duration-500 delay-400">
-                            search
-                        </button>
+                        <Search isSearchBtn={true} size={50} />
                     </span>
                 </div>
             </section>

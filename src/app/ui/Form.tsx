@@ -23,7 +23,7 @@ export default function Form() {
         setError,
         formState: { errors },
     } = useForm<formInput>();
-    console.log(errors);
+
     const onSubmit: SubmitHandler<formInput> = (data) => {
         const { description, file, title } = data;
         const transformData = {
@@ -58,6 +58,12 @@ export default function Form() {
             return categoryCol.filter((item) => item !== value);
         });
     };
+    const fileDeleteHandler = () => {
+        setPreview("");
+        reset({
+            file: "",
+        });
+    };
 
     return (
         <>
@@ -65,7 +71,7 @@ export default function Form() {
                 action=""
                 method="post"
                 onSubmit={handleSubmit(onSubmit)}
-                className=" flex flex-col justify-center px-5 py-5 gap-5  h-screen m-5"
+                className=" flex flex-col justify-center px-5 py-5 gap-5 h-screen"
             >
                 <div className="text-center my-5 text-3xl">
                     <label htmlFor="title">Create Post</label>
@@ -200,11 +206,16 @@ export default function Form() {
                             )}
                         </div>
                     </div>
+
                     {/* file */}
                     <div className="">
-                        <label htmlFor="" className="text-2xl text-neutral-400">
+                        <label
+                            htmlFor="file"
+                            className="text-2xl text-neutral-400"
+                        >
                             Featured photo
                         </label>
+
                         <input
                             type="file"
                             {...register("file", {
@@ -216,7 +227,7 @@ export default function Form() {
                                 const maxFileUploadSize =
                                     sizeInMB * 1024 * 1024;
                                 if (
-                                    e.target.files[0].size > maxFileUploadSize
+                                    e.target.files[0]?.size > maxFileUploadSize
                                 ) {
                                     reset({
                                         file: "",
@@ -228,9 +239,15 @@ export default function Form() {
                                         message: `Photo must be under ${sizeInMB} MB`,
                                     });
                                 } else {
-                                    setPreview(
-                                        URL.createObjectURL(e.target.files[0])
-                                    );
+                                    if (!e.target.files[0]?.size) {
+                                        setPreview("");
+                                    } else {
+                                        setPreview(
+                                            URL.createObjectURL(
+                                                e.target.files[0]
+                                            )
+                                        );
+                                    }
                                 }
                             }}
                             accept="image/jpeg, image/png"
@@ -239,11 +256,23 @@ export default function Form() {
                         />
 
                         {preview && (
-                            <img
-                                src={preview}
-                                alt="preview image for selected file"
-                                className=" max-w-[300px] rounded-md"
-                            />
+                            <div className="relative max-w-[300px]">
+                                <img
+                                    src={preview}
+                                    alt="preview image for selected file"
+                                    className="   rounded-md "
+                                />
+
+                                <div className="absolute opacity-0 hover:opacity-100 duration-200 delay-200 cursor-pointer top-0 w-full bg-black/50 h-full">
+                                    {" "}
+                                    <p
+                                        className="flex justify-center hover:text-red-400 underline underline-offset-2 w-full h-full items-center"
+                                        onClick={fileDeleteHandler}
+                                    >
+                                        Delete
+                                    </p>
+                                </div>
+                            </div>
                         )}
                         <p className="text-red-400 pt-2">
                             {errors?.file?.type === "required" &&

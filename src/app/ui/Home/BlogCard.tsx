@@ -17,7 +17,6 @@ export default function BlogCard({
     horizontal,
     id,
 }: blogCard) {
-    console.log(typeof Category);
     return (
         <>
             <div
