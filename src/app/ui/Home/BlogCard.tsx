@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+
 interface blogCard {
     image: string;
     title: String;
@@ -9,7 +10,7 @@ interface blogCard {
     horizontal: Boolean;
     id: String;
 }
-export default function BlogCard({
+export default async function BlogCard({
     image,
     title,
     Category,
@@ -17,6 +18,7 @@ export default function BlogCard({
     horizontal,
     id,
 }: blogCard) {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     return (
         <>
             <div

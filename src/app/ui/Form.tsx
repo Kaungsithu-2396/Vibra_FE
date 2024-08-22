@@ -43,6 +43,10 @@ export default function Form() {
         );
         if (e.key === "Enter") {
             e.preventDefault();
+            if (!inputValue.value) {
+                setErrorDuplicated("Invalid value");
+                return;
+            }
             if (isItemDuplicated) {
                 setErrorDuplicated("This item already exisits");
             } else {
@@ -158,12 +162,9 @@ export default function Form() {
                                         </ul>
                                     )}
 
-                                    {categoryCol.length === 0 && (
-                                        <p className=" text-red-400 p-0">
-                                            Select one category for better
-                                            experience
-                                        </p>
-                                    )}
+                                    {/* {categoryCol.length === 0 && (
+                                        <p className=" text-red-400 p-0">.</p>
+                                    )} */}
                                     <p className="text-red-400">
                                         {errorDuplicated}
                                     </p>

@@ -1,5 +1,6 @@
 import BlogCard from "@/app/ui/Home/BlogCard";
-import React from "react";
+import React, { Suspense } from "react";
+import Loading from "./loading";
 interface props {
     params: {
         category: String;
@@ -28,38 +29,21 @@ export default function page({ params: { category } }: props) {
                 <h2 className="text-3xl mb-7 text-neutral-300 ">
                     Recommended Blogs
                 </h2>
-                <div className="my-3 flex justify-center gap-5 items-start">
-                    <BlogCard
-                        image="/test-2.avif"
-                        title="Minglar par"
-                        Category={["Travel", "Sport"]}
-                        paragraph={
-                            "ext ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-                        }
-                        horizontal={false}
-                        id={"1"}
-                    />
-                    <BlogCard
-                        image="/test-2.avif"
-                        title="Minglar par"
-                        Category={["Travel", "Sport"]}
-                        paragraph={
-                            "ext ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-                        }
-                        horizontal={false}
-                        id={"1"}
-                    />
-                    <BlogCard
-                        image="/test-2.avif"
-                        title="Minglar par"
-                        Category={["Travel", "Sport"]}
-                        paragraph={
-                            "ext ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-                        }
-                        horizontal={false}
-                        id={"1"}
-                    />
-                </div>
+                <Suspense fallback={<Loading />}>
+                    {/* <div className="my-3 flex justify-center gap-5 items-start"> */}
+                    <div className="my-3 grid grid-cols-3 justify-center items-center">
+                        <BlogCard
+                            image="/test-2.avif"
+                            title="Minglar par"
+                            Category={["Travel", "Sport"]}
+                            paragraph={
+                                "ext ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                            }
+                            horizontal={false}
+                            id={"1"}
+                        />
+                    </div>
+                </Suspense>
             </div>
         </section>
     );
